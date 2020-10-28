@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Projeto01.Infra.Data.SqlServer.Repositories
 {
-    class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         //atributos
         private readonly SqlContext sqlContext;
