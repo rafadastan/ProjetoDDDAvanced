@@ -32,6 +32,8 @@ namespace Projeto01.Presentation.Api
             EntityFrameworConfiguration.AddEntityFramework(services, Configuration);
 
             DependencyInjectionConfiguration.AddDependencyInjection(services);
+
+            CorsConfiguration.AddCors(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +45,8 @@ namespace Projeto01.Presentation.Api
             }
 
             app.UseRouting();
+
+            CorsConfiguration.UseCors(app);
 
             app.UseAuthorization();
 
