@@ -6,9 +6,11 @@ namespace Projeto01.Domain.Contracts.Repositories
 {
     public interface IUnitOfWork : IDisposable
     {
-        #region Repository
-        public IEmpresaRepository EmpresaRepository { get; }
-        public IFuncionarioRepository FuncionarioRepository { get; }
+        #region Repositories
+
+        IEmpresaRepository EmpresaRepository { get; }
+        IFuncionarioRepository FuncionarioRepository { get; }
+        IUsuarioRepository UsuarioRepository { get; }
 
         #endregion
 

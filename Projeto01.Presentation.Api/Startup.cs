@@ -27,12 +27,19 @@ namespace Projeto01.Presentation.Api
         {
             services.AddControllers();
 
+            //configuração do swagger
             SwaggerConfiguration.AddSwagger(services);
 
-            EntityFrameworConfiguration.AddEntityFramework(services, Configuration);
+            //configuração do EntityFramework
+            EntityFrameworkConfiguration.AddEntityFramework(services, Configuration);
 
+            //configuração para autenticação por JWT
+            JwtConfiguration.AddJwt(services, Configuration);
+
+            //configuração para injeção de dependência
             DependencyInjectionConfiguration.AddDependencyInjection(services);
 
+            //configuração de CORS
             CorsConfiguration.AddCors(services);
         }
 
@@ -46,10 +53,13 @@ namespace Projeto01.Presentation.Api
 
             app.UseRouting();
 
+            //configuração de CORS
             CorsConfiguration.UseCors(app);
 
-            app.UseAuthorization();
+            //configuração do JWT
+            JwtConfiguration.UseJwt(app);
 
+            //configuração do swagger
             SwaggerConfiguration.UseSwagger(app);
 
             app.UseEndpoints(endpoints =>

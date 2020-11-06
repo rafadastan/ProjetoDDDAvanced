@@ -25,6 +25,9 @@ namespace Projeto01.Infra.Data.SqlServer.Repositories
         public IFuncionarioRepository FuncionarioRepository
             => new FuncionarioRepository(sqlContext);
 
+        public IUsuarioRepository UsuarioRepository
+            => new UsuarioRepository(sqlContext);
+
         public void BeginTransaction()
         {
             transaction = sqlContext.Database.BeginTransaction();

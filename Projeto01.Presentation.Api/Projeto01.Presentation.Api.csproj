@@ -5,12 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Projeto.Domain\Projeto01.Domain.csproj" />
     <ProjectReference Include="..\Projeto01.Application\Projeto01.Application.csproj" />
+    <ProjectReference Include="..\Projeto01.CrossCutting.Cryptography\Projeto01.CrossCutting.Cryptography.csproj" />
     <ProjectReference Include="..\Projeto01.Infra.Data.SqlServer\Projeto01.Infra.Data.SqlServer.csproj" />
   </ItemGroup>
 

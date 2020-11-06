@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Projeto01.Application.Contracts;
 using Projeto01.Application.Services;
+using Projeto01.CrossCutting.Cryptography;
+using Projeto01.Domain.Contracts.CrossCuttings.Cryptography;
 using Projeto01.Domain.Contracts.Repositories;
 using Projeto01.Domain.Contracts.Services;
 using Projeto01.Domain.Services;
@@ -19,6 +21,7 @@ namespace Projeto01.Presentation.Api.Configurations
             #region Application
 
             services.AddTransient<IEmpresaApplicationService, EmpresaApplicationService>();
+            services.AddTransient<IUsuarioApplicationService, UsuarioApplicationService>();
 
             #endregion
 
@@ -26,6 +29,7 @@ namespace Projeto01.Presentation.Api.Configurations
 
             services.AddTransient<IEmpresaDomainService, EmpresaDomainService>();
             services.AddTransient<IFuncionarioDomainService, FuncionarioDomainService>();
+            services.AddTransient<IUsuarioDomainService, UsuarioDomainService>();
 
             #endregion
 
@@ -33,10 +37,16 @@ namespace Projeto01.Presentation.Api.Configurations
 
             services.AddTransient<IEmpresaRepository, EmpresaRepository>();
             services.AddTransient<IFuncionarioRepository, FuncionarioRepository>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             #endregion
-        }
 
+            #region CrossCutting
+
+            services.AddTransient<IMD5Cryptography, MD5Cryptography>();
+
+            #endregion
+        }
     }
 }

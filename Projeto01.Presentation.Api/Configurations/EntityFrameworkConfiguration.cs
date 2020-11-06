@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projeto01.Presentation.Api.Configurations
 {
-    public class EntityFrameworConfiguration
+    public class EntityFrameworkConfiguration
     {
         public static void AddEntityFramework(IServiceCollection services, IConfiguration configuration)
         {
