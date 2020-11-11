@@ -65,6 +65,20 @@ namespace Projeto01.Infra.Data.SqlServer.Repositories
                 .FirstOrDefault(where);
         }
 
+        public int Count()
+        {
+            return sqlContext
+                .Set<TEntity>()
+                .Count();
+        }
+
+        public int Count(Func<TEntity, bool> where)
+        {
+            return sqlContext
+                .Set<TEntity>()
+                .Count(where);
+        }
+
         public void Dispose()
         {
             sqlContext.Dispose();

@@ -35,5 +35,20 @@ namespace Projeto01.Domain.Services
             #endregion
             base.Create(entity);
         }
+
+        public override void Delete(EmpresaEntity entity)
+        {
+            #region Não é permitido excluir empresa que contenha 1 ou mais funcionário
+
+            var numFuncionarios = unitOfWork.FuncionarioRepository
+                .Count(f => f.EmpresaId == entity.Id);
+
+            if (numFuncionarios > 0)
+                throw new ExclusaoNaoPermitidaException(numFuncionarios);
+
+            #endregion
+
+            base.Delete(entity);
+        }
     }
 }

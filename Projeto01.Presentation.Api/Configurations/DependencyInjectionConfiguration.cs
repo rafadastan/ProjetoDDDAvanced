@@ -21,6 +21,7 @@ namespace Projeto01.Presentation.Api.Configurations
             #region Application
 
             services.AddTransient<IEmpresaApplicationService, EmpresaApplicationService>();
+            services.AddTransient<IFuncionarioApplicationService, FuncionarioApplicationService>();
             services.AddTransient<IUsuarioApplicationService, UsuarioApplicationService>();
 
             #endregion

@@ -16,5 +16,7 @@ namespace Projeto01.Domain.Contracts.Repositories
 
         TEntity GetById(Guid id);
         TEntity Get(Func<TEntity, bool> where);
+        int Count();
+        int Count(Func<TEntity, bool> where);
     }
 }

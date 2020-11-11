@@ -40,9 +40,9 @@ namespace Projeto01.Application.Services
             };
         }
 
-        public UsuarioDTO Get(string email, string senha)
+        public UsuarioDTO GetAccess(UsuarioAcessoModel model)
         {
-            var usuario = usuarioDomainService.Get(email, senha);
+            var usuario = usuarioDomainService.Get(model.Email, model.Senha);
 
             if (usuario == null)
                 return null;

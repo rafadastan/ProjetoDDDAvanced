@@ -9,6 +9,6 @@ namespace Projeto01.Application.Contracts
     public interface IUsuarioApplicationService : IDisposable
     {
         UsuarioDTO Create(UsuarioCadastroModel model);
-        UsuarioDTO Get(string email, string senha);
+        UsuarioDTO GetAccess(UsuarioAcessoModel model);
     }
 }
