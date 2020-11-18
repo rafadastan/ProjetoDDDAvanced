@@ -31,6 +31,6 @@ namespace Projeto01.Application.Models.Funcionarios
         public string Situacao { get; set; }
 
         [Required(ErrorMessage = "Por favor, informe o id da empresa.")]
-        public Guid EmpresaId { get; set; }
+        public string EmpresaId { get; set; }
     }
 }

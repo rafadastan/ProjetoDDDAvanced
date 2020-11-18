@@ -34,7 +34,7 @@ namespace Projeto01.Application.Services
                 DataNascimento = DateTime.Parse(model.DataNascimento),
                 Sexo = (SexoEnum)char.Parse(model.Sexo),
                 Situacao = (SituacaoFuncionarioEnum)int.Parse(model.Situacao),
-                EmpresaId = model.EmpresaId
+                EmpresaId = Guid.Parse(model.EmpresaId)
             };
 
             funcionarioDomainService.Create(funcionarioEntity);
